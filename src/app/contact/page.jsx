@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 
 async function getData() {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
