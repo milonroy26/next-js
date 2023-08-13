@@ -20,7 +20,6 @@ export default function RootLayout({ children }) {
           options={{ showSpinner: false }}
           shallowRouting
         />
-
         {children}
       </body>
     </html>
