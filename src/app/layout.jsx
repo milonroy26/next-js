@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ProgressBar
           height="4px"
-          color="#fffd00"
+          color="red"
           options={{ showSpinner: false }}
           shallowRouting
         />

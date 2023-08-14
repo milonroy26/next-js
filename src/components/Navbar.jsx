@@ -35,7 +35,7 @@ const Navbar = () => {
                   <Link
                     href={{
                       pathname: "/blog",
-                      query: { name: "jastin", id: "105" },
+                      // query: { name: "jastin", id: "105" },
                     }}
                     className={
                       currentRoute === "/blog" ? "activeLink" : "pendingLink"
