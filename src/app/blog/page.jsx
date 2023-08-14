@@ -1,33 +1,16 @@
-"use client";
+import Navbar from "@/components/Navbar";
+import getAllPosts from "@/utility/getAllPosts";
 
-import React, { useEffect, useState } from "react";
-import Navbar from "../../components/Navbar";
-import { useSearchParams } from "next/navigation";
-
-const page = () => {
-  const searchParams = useSearchParams();
-
-  const [users, setUsers] = useState([]);
-  console.log(users);
-  useEffect(() => {
-    (async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
-      const data = await res.json();
-      setUsers(data);
-    })();
-  }, []);
+const page = async () => {
+  const posts = await getAllPosts();
   return (
     <div>
       <Navbar></Navbar>
-      <h1>This is a Blog page</h1>
-      <h1>Boss Name: {searchParams.get("name")} </h1>
-      <h1>Boss ID: {searchParams.get("id")} </h1>
-      {users.map((item, index) => (
-        <div key={index}>
-          <h1> Name: {item.name} </h1>
-          <h1> User Name: {item.username} </h1>
-        </div>
-      ))}
+      <div className="py-5">
+        {posts.map((post) => (
+          <h1 key={post.id}> {post.title} </h1>
+        ))}
+      </div>
     </div>
   );
 };
