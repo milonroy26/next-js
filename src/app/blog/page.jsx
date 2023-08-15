@@ -9,9 +9,9 @@ const page = async () => {
       <Navbar></Navbar>
       <div className="py-5 px-10">
         {posts.map((post) => (
-          <h1 className="shadow-md mb-4 p-2" key={post.id}> 
+          <h1 className="shadow-md mb-4 p-2" key={post.id}>
             <Link href={`/blog/${post.id}`}>
-             {post.id} - {post.title}
+              {post.id} - {post.title}
             </Link>
           </h1>
         ))}
